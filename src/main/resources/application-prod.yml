@@ -1,0 +1,7 @@
+server:
+  port: 8080
+  context-path: /springboot
+boy:
+  name: bamboolsu_prod
+  age: 18
+  content: content:${name},age:${age}
