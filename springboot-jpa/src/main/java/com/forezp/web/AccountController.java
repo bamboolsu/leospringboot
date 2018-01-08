@@ -2,6 +2,8 @@ package com.forezp.web;
 
 import com.forezp.dao.AccountDao;
 import com.forezp.entity.Account;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,12 +16,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
+    private Log log = LogFactory.getLog(AccountController.class);
 
+    //在这个栗子中我简略了service层的书写，在实际开发中，不可省略。新写一个controller，写几个restful api来测试数据的访问。
     @Autowired
     AccountDao accountDao;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Account> getAccounts() {
+        log.info("access");
         return accountDao.findAll();
     }
 

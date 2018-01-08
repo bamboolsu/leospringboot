@@ -3,9 +3,22 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
-    password: 123456
+    password: root
 
   jpa:
     hibernate:
-      ddl-auto: update  # 第一次简表create  后面用update
+      ddl-auto: update  # 第一次简表create  后面用update 注意，如果通过jpa在数据库中建表，将jpa.hibernate,ddl-auto改为create，建完表之后，要改为update,要不然每次重启工程会删除表并新建
     show-sql: true
+
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+    com:
+      bee:
+        sample: debug
+  file: my.log
+  pattern:
+    console: '%level %date{HH:mm:ss} %logger{20}.%M %L :%m%n'
+    file: '%level %date{ISO8601} [%thread]  %logger{20}.%M %L :%m%n'
