@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 @Repository
 public class RedisDao {
 
+    //通过redisTemplate来访问redis.
+
     @Autowired
     private StringRedisTemplate template;
 
