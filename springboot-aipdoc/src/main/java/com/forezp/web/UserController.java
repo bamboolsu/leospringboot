@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/user")
 public class UserController {
 
+    //更多注释，参见官方文档：http://apidocjs.com/#params
+
     /**
      * @api {get} /user/:id  获取用户信息
      * @apiName GetUser
@@ -43,8 +45,8 @@ public class UserController {
 
 
     /**
-     * @api {get} /user/:id Request User information
-     * @apiName GetUser
+     * @api {put} /user/:id Request User information
+     * @apiName putUser
      * @apiGroup User
      *
      * @apiParam {Number} id Users unique ID.
